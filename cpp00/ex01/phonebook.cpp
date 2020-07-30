@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 14:48:17 by rpet          #+#    #+#                 */
-/*   Updated: 2020/07/30 11:23:03 by rpet          ########   odam.nl         */
+/*   Updated: 2020/07/30 14:12:03 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,7 @@ void	search(Contact contact[8], int contact_amount)
 			std::cout << "Please pick a number not higher than " << 
 				contact_amount << '.' << std::endl;
 		else
-		{
-			std::cout << index_choice << std::endl;
 			contact[index_choice - 1].show_info();
-		}
 	}
 }
 

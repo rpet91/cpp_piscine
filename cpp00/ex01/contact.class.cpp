@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 12:57:25 by rpet          #+#    #+#                 */
-/*   Updated: 2020/07/30 11:25:10 by rpet          ########   odam.nl         */
+/*   Updated: 2020/07/30 13:00:00 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	Contact::add(void)
 	std::getline(std::cin, this->_darkest_secret);
 }
 
-void	Contact::show_info(void)
+void	Contact::show_info(void) const
 {
 	std::cout << "First name: " << this->_first_name << std::endl;
 	std::cout << "Last name: " << this->_last_name << std::endl;
@@ -61,7 +61,7 @@ void	Contact::show_info(void)
 	std::cout << "Darkest secret: " << this->_darkest_secret << std::endl;
 }
 
-void    Contact::shorten_name(std::string name)
+void    Contact::_shorten_name(std::string name) const
 {
     std::cout << '|';
     if (name.length() > 10)
@@ -72,10 +72,10 @@ void    Contact::shorten_name(std::string name)
     std::cout << std::right << std::setw(10) << name;
 }
 
-void	Contact::show_list(void)
+void	Contact::show_list(void) const
 {
-    shorten_name(this->_first_name);
-    shorten_name(this->_last_name);
-    shorten_name(this->_nickname);
+    _shorten_name(this->_first_name);
+    _shorten_name(this->_last_name);
+    _shorten_name(this->_nickname);
     std::cout << std::endl;
 }
