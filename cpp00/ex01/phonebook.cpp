@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 14:48:17 by rpet          #+#    #+#                 */
-/*   Updated: 2020/07/30 14:12:03 by rpet          ########   odam.nl         */
+/*   Updated: 2020/08/03 08:55:00 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int		main(void)
 
 	while (true)
 	{
-		std::cout << "What would you like to do?: ";
+		std::cout << "What would you like to do? (ADD/SEARCH/EXIT): ";
 		std::getline(std::cin, arg);
 		if (arg == "ADD")
 		{

@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 12:57:25 by rpet          #+#    #+#                 */
-/*   Updated: 2020/07/30 13:00:00 by rpet          ########   odam.nl         */
+/*   Updated: 2020/08/03 08:49:38 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void    Contact::_shorten_name(std::string name) const
     if (name.length() > 10)
     {
         name.resize(9);
-        name.resize(10, '.');
+        name += ".";
     }
     std::cout << std::right << std::setw(10) << name;
 }
