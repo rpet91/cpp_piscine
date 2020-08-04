@@ -6,11 +6,11 @@
 #    By: rpet <marvin@codam.nl>                       +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/27 14:06:48 by rpet          #+#    #+#                  #
-#    Updated: 2020/08/03 14:15:44 by rpet          ########   odam.nl          #
+#    Updated: 2020/08/04 09:18:08 by rpet          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Ride_my_pony
+NAME = Magical_pony
 
 SRCS = Pony.cpp main.cpp
 
