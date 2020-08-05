@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/04 10:26:56 by rpet          #+#    #+#                 */
-/*   Updated: 2020/08/04 12:58:28 by rpet          ########   odam.nl         */
+/*   Updated: 2020/08/05 09:25:30 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ ZombieEvent::~ZombieEvent(void)
 {
 }
 
-void	ZombieEvent::setZombieType(std::string type)
+void			ZombieEvent::setZombieType(std::string type)
 {
 	this->_type = type;
 }
 
-Zombie	*ZombieEvent::newZombie(std::string name)
+Zombie			*ZombieEvent::newZombie(std::string name)
 {
 	Zombie	*tmp;
 
@@ -35,7 +35,10 @@ Zombie	*ZombieEvent::newZombie(std::string name)
 	return (tmp);
 }
 
-void	ZombieEvent::randomChump(void)
+Zombie			*ZombieEvent::randomChump(void)
 {
+	Zombie	*tmp;
 
+	tmp = new Zombie("", this->_type);
+	return (tmp);
 }
