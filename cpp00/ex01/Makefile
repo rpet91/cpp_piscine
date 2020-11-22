@@ -6,13 +6,13 @@
 #    By: rpet <marvin@codam.nl>                       +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/27 14:06:48 by rpet          #+#    #+#                  #
-#    Updated: 2020/07/28 14:28:47 by rpet          ########   odam.nl          #
+#    Updated: 2020/08/03 14:08:05 by rpet          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
-SRCS = phonebook.cpp contact.class.cpp 
+SRCS = contact.class.cpp phonebook.cpp 
 
 FLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
 

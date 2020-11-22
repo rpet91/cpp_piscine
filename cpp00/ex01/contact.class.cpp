@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 12:57:25 by rpet          #+#    #+#                 */
-/*   Updated: 2020/08/03 08:49:38 by rpet          ########   odam.nl         */
+/*   Updated: 2020/11/22 11:50:44 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,30 @@
 
 Contact::Contact(void)
 {
-	return;
+	return ;
+}
+
+void    Contact::_fill_data(std::string question, std::string *answer)
+{
+	if (std::cin.eof())
+		return ;
+	std::cout << question;
+	std::getline(std::cin, *answer);
 }
 
 void	Contact::add(void)
 {
 	std::cout << "Adding a new contact..." << std::endl;
-	std::cout << "Insert first name: ";
-	std::getline(std::cin, this->_first_name);
-	std::cout << "Insert last name: ";
-	std::getline(std::cin, this->_last_name);
-	std::cout << "Insert nickname: ";
-	std::getline(std::cin, this->_nickname);
-	std::cout << "Insert login: ";
-	std::getline(std::cin, this->_login);
-	std::cout << "Insert postal address: ";
-	std::getline(std::cin, this->_postal_address);
-	std::cout << "Insert email address: ";
-	std::getline(std::cin, this->_email_address);
-	std::cout << "Insert phone number: ";
-	std::getline(std::cin, this->_phone_number);
-	std::cout << "Insert birthday date: ";
-	std::getline(std::cin, this->_birthday_date);
-	std::cout << "Insert favorite meal: ";
-	std::getline(std::cin, this->_favorite_meal);
-	std::cout << "Insert underwear color: ";
-	std::getline(std::cin, this->_underwear_color);
-	std::cout << "Insert darkest secret: ";
-	std::getline(std::cin, this->_darkest_secret);
+	_fill_data("Insert first name: ", &(this->_first_name));
+	_fill_data("Insert last name: ", &(this->_last_name));
+	_fill_data("Insert login: ", &(this->_login));
+	_fill_data("Insert postal address: ", &(this->_postal_address));
+	_fill_data("Insert email address: ", &(this->_email_address));
+	_fill_data("Insert phone number: ", &(this->_phone_number));
+	_fill_data("Insert birthday date: ", &(this->_birthday_date));
+	_fill_data("Insert favorite meal: ", &(this->_favorite_meal));
+	_fill_data("Insert underwear color: ", &(this->_underwear_color));
+	_fill_data("Insert darkest secret: ", &(this->_darkest_secret));
 }
 
 void	Contact::show_info(void) const

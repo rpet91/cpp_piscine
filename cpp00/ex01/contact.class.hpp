@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 08:33:10 by rpet          #+#    #+#                 */
-/*   Updated: 2020/07/30 11:53:18 by rpet          ########   odam.nl         */
+/*   Updated: 2020/11/22 11:43:01 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class Contact {
 		std::string		_underwear_color;
 		std::string		_darkest_secret;
 
+		void	_fill_data(std::string question, std::string *answer);
 		void	_shorten_name(std::string name) const;
 };
 

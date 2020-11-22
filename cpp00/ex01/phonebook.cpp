@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 14:48:17 by rpet          #+#    #+#                 */
-/*   Updated: 2020/08/03 08:55:00 by rpet          ########   odam.nl         */
+/*   Updated: 2020/11/22 12:38:35 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void	search(Contact contact[8], int contact_amount)
 	process_list(contact, contact_amount);
 	std::cout << "From which contact would you like to see more info?: ";
 	std::getline(std::cin, arg);
+	if (std::cin.eof())
+		return ;
 	if (arg.length() != 1 || !std::isdigit(arg[0]) || arg[0] == '0')
 		std::cout << "Please give a valid index number." << std::endl;
 	else	
@@ -54,6 +56,13 @@ void	search(Contact contact[8], int contact_amount)
 	}
 }
 
+std::string		input_toupper(std::string arg)
+{
+	for (int i = 0; arg[i]; i++)
+		arg[i] = std::toupper(arg[i]);
+	return (arg);
+}
+
 int		main(void)
 {
 	Contact			contact[8];
@@ -64,22 +73,22 @@ int		main(void)
 	{
 		std::cout << "What would you like to do? (ADD/SEARCH/EXIT): ";
 		std::getline(std::cin, arg);
-		if (arg == "ADD")
+		if (input_toupper(arg) == "ADD")
 		{
 			if (contact_amount >= 8)
 				std::cout << "Phonebook is full, you can't add more." << std::endl;
 			else
 				contact[contact_amount++].add();
 		}
-		if (arg == "SEARCH")
+		if (input_toupper(arg) == "SEARCH")
 		{
 			if (contact_amount == 0)
 				std::cout << "You need to have at least one contact." << std::endl;
 			else
 				search(contact, contact_amount);
 		}
-		if (arg == "EXIT")
-			break;
+		if (input_toupper(arg) == "EXIT" || std::cin.eof())
+			break ;
 	}
 	return (0);
 }
