@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 12:57:25 by rpet          #+#    #+#                 */
-/*   Updated: 2020/11/22 11:50:44 by rpet          ########   odam.nl         */
+/*   Updated: 2020/11/29 12:46:42 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	Contact::add(void)
 	std::cout << "Adding a new contact..." << std::endl;
 	_fill_data("Insert first name: ", &(this->_first_name));
 	_fill_data("Insert last name: ", &(this->_last_name));
+	_fill_data("Insert nickname: ", &(this->_nickname));
 	_fill_data("Insert login: ", &(this->_login));
 	_fill_data("Insert postal address: ", &(this->_postal_address));
 	_fill_data("Insert email address: ", &(this->_email_address));
