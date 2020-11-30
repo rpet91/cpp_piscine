@@ -6,22 +6,23 @@
 #    By: rpet <marvin@codam.nl>                       +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/27 14:06:48 by rpet          #+#    #+#                  #
-#    Updated: 2020/08/05 12:53:12 by rpet          ########   odam.nl          #
+#    Updated: 2020/11/30 11:49:37 by rpet          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Brain
-
 SRCS = ex04.cpp
-
+OBJS = $(SRCS:.cpp=.o)
 FLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
-
 CC = clang++
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
-	$(CC) $(FLAGS) -I. $(SRCS) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+
+%.o:%.cpp
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	rm -f *.o

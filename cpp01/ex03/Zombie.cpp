@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/04 10:26:44 by rpet          #+#    #+#                 */
-/*   Updated: 2020/08/05 11:55:14 by rpet          ########   odam.nl         */
+/*   Updated: 2020/11/28 13:10:55 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <ctime>
 #include <cstdlib>
 
-bool	_seeded = false;
+bool	Zombie::_seeded = false;
 
 Zombie::Zombie(void)
 {

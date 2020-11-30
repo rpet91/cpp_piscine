@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/04 10:27:22 by rpet          #+#    #+#                 */
-/*   Updated: 2020/08/05 09:36:51 by rpet          ########   odam.nl         */
+/*   Updated: 2020/11/28 12:56:09 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 int		main(void)
 {
-	Zombie		zombie_stack("Ben", "Flesh Eater");
-	Zombie		*zombie_heap;
-	Zombie		*zombie_random;
-	ZombieEvent	event;
+	Zombie			zombie_stack("Ben", "Flesh Eater");
+	Zombie			*zombie_heap;
+	Zombie			*zombie_random;
+	ZombieEvent		event;
 
 	zombie_stack.announce();
 	event.setZombieType("Hugger");

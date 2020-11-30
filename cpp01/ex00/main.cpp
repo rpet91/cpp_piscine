@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 13:57:07 by rpet          #+#    #+#                 */
-/*   Updated: 2020/08/04 09:16:31 by rpet          ########   odam.nl         */
+/*   Updated: 2020/11/28 11:37:39 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void	ponyOnTheHeap(void)
 
 int		main(void)
 {
-	ponyOnTheStack();
-	std::cout << std::endl;
 	ponyOnTheHeap();
+	std::cout << std::endl;
+	ponyOnTheStack();
 	return (0);
 }

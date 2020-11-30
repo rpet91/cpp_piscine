@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Brain.hpp                                          :+:    :+:            */
+/*   Fixed.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/05 12:55:45 by rpet          #+#    #+#                 */
-/*   Updated: 2020/11/30 11:50:27 by rpet          ########   odam.nl         */
+/*   Created: 2020/11/30 13:02:21 by rpet          #+#    #+#                 */
+/*   Updated: 2020/11/30 16:46:55 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
-# include <string>
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-class Brain
-{
+class Fixed {
+
 	public:
-		Brain(void);
-		~Brain(void);
-		std::string		identify(void) const;
+
+	private:
 };
 
 #endif

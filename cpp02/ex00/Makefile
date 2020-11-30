@@ -5,30 +5,32 @@
 #                                                      +:+                     #
 #    By: rpet <marvin@codam.nl>                       +#+                      #
 #                                                    +#+                       #
-#    Created: 2020/07/27 14:06:48 by rpet          #+#    #+#                  #
-#    Updated: 2020/11/30 11:51:59 by rpet          ########   odam.nl          #
+#    Created: 2020/11/30 13:04:14 by rpet          #+#    #+#                  #
+#    Updated: 2020/11/30 13:15:08 by rpet          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = replace
-SRCS = replace.cpp
+NAME = a.out
+SRCS = Fixed.cpp
 OBJS = $(SRCS:.cpp=.o)
 FLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
 CC = clang++
+INC = Fixed.hpp
+
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
-%.o:%.cpp
-	$(CC) $(FLAGS) -c $< -o $@
+%.o:%.cpp $(INC)
+	$(CC) $(FLAGS) -I. -c $< -o $@
 
 clean:
 	rm -f *.o
 
 fclean: clean
-	rm -f *.replace
 	rm -f $(NAME)
 
 re: fclean all

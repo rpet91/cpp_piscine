@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/04 10:27:06 by rpet          #+#    #+#                 */
-/*   Updated: 2020/08/05 09:34:13 by rpet          ########   odam.nl         */
+/*   Updated: 2020/11/30 11:47:16 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Zombie
 		void			_randomName(void);
 		std::string		_name;
 		std::string		_type;
-		bool			_seeded;
+		static bool		_seeded;
 };
 
 #endif

@@ -6,22 +6,24 @@
 #    By: rpet <marvin@codam.nl>                       +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/27 14:06:48 by rpet          #+#    #+#                  #
-#    Updated: 2020/08/04 09:18:08 by rpet          ########   odam.nl          #
+#    Updated: 2020/11/30 11:46:22 by rpet          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Magical_pony
-
 SRCS = Pony.cpp main.cpp
-
+OBJS = $(SRCS:.cpp=.o)
 FLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
-
 CC = clang++
+INC = Pony.hpp
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
-	$(CC) $(FLAGS) -I. $(SRCS) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+
+%.o:%.cpp $(INC)
+	$(CC) $(FLAGS) -I. -c $< -o $@
 
 clean:
 	rm -f *.o
