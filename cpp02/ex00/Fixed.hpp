@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Fixed.hpp                                          :+:    :+:            */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/30 13:02:21 by rpet          #+#    #+#                 */
-/*   Updated: 2020/11/30 16:46:55 by rpet          ########   odam.nl         */
+/*   Updated: 2021/02/11 16:52:53 by rpet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,17 @@
 class Fixed {
 
 	public:
+		Fixed(void);
+		~Fixed(void);
+		Fixed(Fixed const &original);
+		Fixed &operator=(Fixed const &original);
+
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
 
 	private:
+		int					_fixedValue;
+		static const int	_fractionalBits = 8;
 };
 
 #endif
