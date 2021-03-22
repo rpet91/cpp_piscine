@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/22 08:11:08 by rpet          #+#    #+#                 */
-/*   Updated: 2021/03/22 13:16:00 by rpet          ########   odam.nl         */
+/*   Updated: 2021/03/22 16:31:19 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ class FragTrap {
 		std::string		getRndAtk(void);
 
 	private:
-
 		int				_hp;
 		int				_maxhp;
 		int				_ep;
