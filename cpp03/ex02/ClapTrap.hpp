@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/29 14:52:32 by rpet          #+#    #+#                 */
-/*   Updated: 2021/03/29 15:01:44 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/05 11:09:32 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class ClapTrap {
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 
-	private:
+	protected:
 		int			_hp;
 		int			_maxhp;
 		int			_ep;
