@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/22 08:10:12 by rpet          #+#    #+#                 */
-/*   Updated: 2021/03/29 16:11:57 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/19 14:12:08 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,29 @@
 ClapTrap::ClapTrap(void) : _hp(100), _maxhp(100), _ep(100), _maxep(100), _level(1),
 	_name("Mr. Blake"), _meleeAtk(30), _rangedAtk(20), _armorDmgRed(5)
 {
-	std::cout << this->_name <<
-		" arises. Look out everybody! Things are about to get awesome!" << std::endl;
+	std::cout << this->_name << " the Cl4pTr4pper has been called." << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _hp(100), _maxhp(100), _ep(100), _maxep(100),
 	_level(1), _name(name), _meleeAtk(30), _rangedAtk(20), _armorDmgRed(5)
 {
-	std::cout << this->_name <<
-		" is ready to fight. This time it'll be awesome, I promise!" << std::endl;
+	std::cout << this->_name << " the Cl4pTr4pper just arrived." << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Argh arghargh death gurgle gurglegurgle urgh... death. " << 
-		this->_name << " died." << std::endl;
+	std::cout << this->_name << " stopped their life." << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &original)
 {
-	std::cout << "Let's get this party started!" << std::endl;
+	std::cout << "ClapTrapper's copy constructor" << std::endl;
 	*this = original;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &original)
 {
-	std::cout << "Hey everybody! Check out my package" << std::endl;
+	std::cout << "ClapTrapper's operator overload" << std::endl;
 	this->_hp = original._hp;
 	this->_maxhp = original._maxhp;
 	this->_ep = original._ep;
