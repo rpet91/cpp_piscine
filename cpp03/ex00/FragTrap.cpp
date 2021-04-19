@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/22 08:10:12 by rpet          #+#    #+#                 */
-/*   Updated: 2021/03/22 16:01:42 by rpet          ########   odam.nl         */
+/*   Updated: 2021/03/29 11:37:27 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void		FragTrap::vaulthunter_dot_exe(std::string const & target)
 	if (this->_ep >= 25)
 	{
 		this->_ep -= 25;
-		std::cout << "FR4G-TP " << this->_name << " uses the attack \"" << getRndAtk() <<
+		std::cout << "FR4G-TP " << this->_name << " uses the attack \"" << _getRndAtk() <<
 			"\" to hit " << target << ". " << this->_name << " has " <<
 			this->_ep << " ep left." << std::endl;
 	}
@@ -118,7 +118,7 @@ void		FragTrap::vaulthunter_dot_exe(std::string const & target)
 	}
 }
 
-std::string	FragTrap::getRndAtk(void)
+std::string	FragTrap::_getRndAtk(void)
 {
 	int				amount;
 	std::string		attack;

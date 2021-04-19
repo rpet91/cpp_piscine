@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/22 08:11:08 by rpet          #+#    #+#                 */
-/*   Updated: 2021/03/22 16:31:19 by rpet          ########   odam.nl         */
+/*   Updated: 2021/03/29 11:43:31 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ class FragTrap {
 		void	beRepaired(unsigned int amount);
 
 		void			vaulthunter_dot_exe(std::string const & target);
-		std::string		getRndAtk(void);
-
+		
 	private:
 		int				_hp;
 		int				_maxhp;
@@ -42,6 +41,7 @@ class FragTrap {
 		int				_rangedAtk;
 		int				_armorDmgRed;
 
+		std::string		_getRndAtk(void);
 };
 
 #endif
