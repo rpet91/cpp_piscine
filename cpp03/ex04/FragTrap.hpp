@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/22 08:11:08 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/05 10:47:16 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/26 07:29:52 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include "ClapTrap.hpp"
 # include <iostream>
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
 
 	public:
 		FragTrap(void);
@@ -25,6 +25,12 @@ class FragTrap : public ClapTrap {
 		FragTrap& operator=(FragTrap const &original);
 
 		void			vaulthunter_dot_exe(std::string const & target);
+		
+		static const int	maxhp;
+		static const int	maxep;
+		static const int	meleeAtk;
+		static const int	rangedAtk;
+		static const int	armorDmgRed;
 		
 	private:
 		std::string		_getRndAtk(void);

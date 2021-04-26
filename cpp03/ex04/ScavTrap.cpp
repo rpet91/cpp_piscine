@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/22 08:10:12 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/05 11:09:07 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/26 11:54:20 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,37 @@
 #include <iostream>
 #include <cstdlib>
 
+const int	ScavTrap::maxhp = 100;
+const int	ScavTrap::maxep = 50;
+const int	ScavTrap::meleeAtk = 20;
+const int	ScavTrap::rangedAtk = 15;
+const int	ScavTrap::armorDmgRed = 3;
+
 ScavTrap::ScavTrap(void) : ClapTrap("Maya")
 {
+	this->_hp = ScavTrap::maxhp;
+	this->_maxhp = ScavTrap::maxhp;
+	this->_ep = ScavTrap::maxep;
+	this->_maxep = ScavTrap::maxep;
+	this->_level = 1;
+	this->_name = "Maya";
+	this->_meleeAtk = ScavTrap::meleeAtk;
+	this->_rangedAtk = ScavTrap::rangedAtk;
+	this->_armorDmgRed = ScavTrap::armorDmgRed;
 	std::cout << "Maya is here. She got quests." << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
+	this->_hp = ScavTrap::maxhp;
+	this->_maxhp = ScavTrap::maxhp;
+	this->_ep = ScavTrap::maxep;
+	this->_maxep = ScavTrap::maxep;
+	this->_level = 1;
+	this->_name = name;
+	this->_meleeAtk = ScavTrap::meleeAtk;
+	this->_rangedAtk = ScavTrap::rangedAtk;
+	this->_armorDmgRed = ScavTrap::armorDmgRed;
 	std::cout << name << " has awoken. There's more to learn!" << std::endl;
 }
 

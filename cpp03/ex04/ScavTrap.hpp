@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/22 16:28:18 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/05 10:46:40 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/26 11:50:48 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ class ScavTrap : public ClapTrap {
 		ScavTrap& operator=(ScavTrap const &original);
 
 		void	challengeNewcomer(void);
+
+		static const int	maxhp;
+		static const int	maxep;
+		static const int	meleeAtk;
+		static const int	rangedAtk;
+		static const int	armorDmgRed;
 
 	private:
 		std::string		_getRndChallenge(void);

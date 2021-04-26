@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/22 09:07:15 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/19 13:59:05 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/26 11:47:43 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 #include <cstdlib>
 #include <string>
 
@@ -51,31 +52,40 @@ int		main(void)
 
 	std::cout << std::endl;
 	
-	ClapTrap	e;
-	ClapTrap	f("Kabouter Plop");
+	NinjaTrap	e;
+	NinjaTrap	f("Pizzaman");
 
-	f.meleeAttack("Evil tosser");
+	f.meleeAttack("Ninja destroyer");
 	f.takeDamage(26);
-	f.rangedAttack("Evil tosser");
+	f.rangedAttack("Ninja destroyer");
 	f.beRepaired(15);
+	f.ninjaShoebox(a);
+	f.ninjaShoebox(b);
+	f.ninjaShoebox(c);
+	f.ninjaShoebox(d);
+	f.ninjaShoebox(e);
+	f.ninjaShoebox(f);
 
 	std::cout << std::endl;
-	
-	NinjaTrap	g;
-	NinjaTrap	h("Pizzaman");
 
-	h.meleeAttack("Ninja destroyer");
+	SuperTrap g;
+	SuperTrap h("Carb eater");
+
+	h.meleeAttack("Enderman");
 	h.takeDamage(26);
-	h.rangedAttack("Ninja destroyer");
+	h.rangedAttack("Enderman");
 	h.beRepaired(15);
+	h.vaulthunter_dot_exe("Skeleton");
+	h.vaulthunter_dot_exe("Skeleton");
+	h.vaulthunter_dot_exe("Skeleton");
+	h.vaulthunter_dot_exe("Skeleton");
+	h.vaulthunter_dot_exe("Skeleton");
 	h.ninjaShoebox(a);
 	h.ninjaShoebox(b);
 	h.ninjaShoebox(c);
 	h.ninjaShoebox(d);
 	h.ninjaShoebox(e);
 	h.ninjaShoebox(f);
-	h.ninjaShoebox(g);
-	h.ninjaShoebox(h);
 
 	std::cout << std::endl;
 	return (0);

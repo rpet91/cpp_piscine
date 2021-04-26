@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/22 08:10:12 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/05 11:09:15 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/26 08:47:17 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,38 @@
 #include <iostream>
 #include <cstdlib>
 
+const int	FragTrap::maxhp = 100;
+const int	FragTrap::maxep = 100;
+const int	FragTrap::meleeAtk = 30;
+const int	FragTrap::rangedAtk = 20;
+const int	FragTrap::armorDmgRed = 5;
+
 FragTrap::FragTrap(void) : ClapTrap("Handsome Jack")
 {
 	std::cout << "Handsome Jack arises. Look out everybody! Things are about to get awesome!" << std::endl;
+	this->_hp = FragTrap::maxhp;
+	this->_maxhp = FragTrap::maxhp;
+	this->_ep = FragTrap::maxep;
+	this->_maxep = FragTrap::maxep;
+	this->_level = 1;
+	this->_name = "Handsome Jack";
+	this->_meleeAtk = FragTrap::meleeAtk;
+	this->_rangedAtk = FragTrap::rangedAtk;
+	this->_armorDmgRed = FragTrap::armorDmgRed;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << name << " is ready to fight. This time it'll be awesome, I promise!" << std::endl;
+	this->_hp = FragTrap::maxhp;
+	this->_maxhp = FragTrap::maxhp;
+	this->_ep = FragTrap::maxep;
+	this->_maxep = FragTrap::maxep;
+	this->_level = 1;
+	this->_name = name;
+	this->_meleeAtk = FragTrap::meleeAtk;
+	this->_rangedAtk = FragTrap::rangedAtk;
+	this->_armorDmgRed = FragTrap::armorDmgRed;
 }
 
 FragTrap::~FragTrap(void)
