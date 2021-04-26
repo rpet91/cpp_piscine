@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/22 08:10:12 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/05 11:09:15 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/26 11:23:42 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,30 @@
 
 FragTrap::FragTrap(void) : ClapTrap("Handsome Jack")
 {
-	std::cout << "Handsome Jack arises. Look out everybody! Things are about to get awesome!" << std::endl;
+	std::cout << this->_name <<
+		" arises. Look out everybody! Things are about to get awesome!" << std::endl;
+	this->_hp = 100;
+	this->_maxhp = 100;
+	this->_ep = 100;
+	this->_maxep = 100;
+	this->_level = 1;
+	this->_meleeAtk = 30;
+	this->_rangedAtk = 20;
+	this->_armorDmgRed = 5;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << name << " is ready to fight. This time it'll be awesome, I promise!" << std::endl;
+	std::cout << this->_name <<
+		" is ready to fight. This time it'll be awesome, I promise!" << std::endl;
+	this->_hp = 100;
+	this->_maxhp = 100;
+	this->_ep = 100;
+	this->_maxep = 100;
+	this->_level = 1;
+	this->_meleeAtk = 30;
+	this->_rangedAtk = 20;
+	this->_armorDmgRed = 5;
 }
 
 FragTrap::~FragTrap(void)

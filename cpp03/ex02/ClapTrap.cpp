@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   FragTrap.cpp                                       :+:    :+:            */
+/*   ClapTrap.cpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/22 08:10:12 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/19 14:12:08 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/26 08:52:55 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 #include <iostream>
 #include <cstdlib>
 
-ClapTrap::ClapTrap(void) : _hp(100), _maxhp(100), _ep(100), _maxep(100), _level(1),
-	_name("Mr. Blake"), _meleeAtk(30), _rangedAtk(20), _armorDmgRed(5)
+ClapTrap::ClapTrap(void) : _name("Mr. Blake")
 {
 	std::cout << this->_name << " the Cl4pTr4pper has been called." << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _hp(100), _maxhp(100), _ep(100), _maxep(100),
-	_level(1), _name(name), _meleeAtk(30), _rangedAtk(20), _armorDmgRed(5)
+ClapTrap::ClapTrap(std::string name) : _name(name)
 {
 	std::cout << this->_name << " the Cl4pTr4pper just arrived." << std::endl;
 }

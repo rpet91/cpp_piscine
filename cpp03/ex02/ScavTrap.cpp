@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/22 08:10:12 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/05 11:09:07 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/26 11:24:47 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,30 @@
 
 ScavTrap::ScavTrap(void) : ClapTrap("Maya")
 {
-	std::cout << "Maya is here. She got quests." << std::endl;
+	std::cout << this->_name <<
+		" is here. She got quests." << std::endl;
+	this->_hp = 100;
+	this->_maxhp = 100;
+	this->_ep = 50;
+	this->_maxep = 50;
+	this->_level = 1;
+	this->_meleeAtk = 20;
+	this->_rangedAtk = 15;
+	this->_armorDmgRed = 3;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << name << " has awoken. There's more to learn!" << std::endl;
+	std::cout << this->_name <<
+		" has awoken. There's more to learn!" << std::endl;
+	this->_hp = 100;
+	this->_maxhp = 100;
+	this->_ep = 50;
+	this->_maxep = 50;
+	this->_level = 1;
+	this->_meleeAtk = 20;
+	this->_rangedAtk = 15;
+	this->_armorDmgRed = 3;
 }
 
 ScavTrap::~ScavTrap(void)
