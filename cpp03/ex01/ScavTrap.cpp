@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/22 08:10:12 by rpet          #+#    #+#                 */
-/*   Updated: 2021/03/29 11:47:21 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/26 08:59:23 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 #include <iostream>
 #include <cstdlib>
 
-ScavTrap::ScavTrap(void) : _hp(100), _maxhp(100), _ep(100), _maxep(100), _level(1),
-	_name("Maya"), _meleeAtk(30), _rangedAtk(20), _armorDmgRed(5)
+ScavTrap::ScavTrap(void) : _hp(100), _maxhp(100), _ep(50), _maxep(50), _level(1),
+	_name("Maya"), _meleeAtk(20), _rangedAtk(15), _armorDmgRed(3)
 {
 	std::cout << this->_name <<
 		" is here. She got quests." << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : _hp(100), _maxhp(100), _ep(100), _maxep(100),
-	_level(1), _name(name), _meleeAtk(30), _rangedAtk(20), _armorDmgRed(5)
+ScavTrap::ScavTrap(std::string name) : _hp(100), _maxhp(100), _ep(50), _maxep(50),
+	_level(1), _name(name), _meleeAtk(20), _rangedAtk(15), _armorDmgRed(3)
 {
 	std::cout << this->_name <<
 		" has awoken. There's more to learn!" << std::endl;
