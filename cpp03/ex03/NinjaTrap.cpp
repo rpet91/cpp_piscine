@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/05 13:20:46 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/19 14:16:52 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/26 11:18:24 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 NinjaTrap::NinjaTrap(void) : ClapTrap("Crazy Earl")
 {
-	std::cout << "Crazy Earl says hi" << std::endl;
+	std::cout << this->_name << " says hi" << std::endl;
 	this->_hp = 60;
 	this->_maxhp = 60;
 	this->_ep = 120;
