@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/26 13:33:01 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/27 11:15:07 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/28 11:27:22 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Victim {
 	public:
 		Victim(std::string name);
 		Victim(Victim const &original);
-		Victim& operator=(Victim const &original);
+		Victim &operator=(Victim const &original);
 		~Victim(void);
 
 		std::string		getName(void) const;
@@ -27,10 +27,9 @@ class Victim {
 		void			polymorph(Victim const &src) const;
 
 	protected:
-		Victim(void);
-
+		Victim();
+		
 		std::string		_name;
-
 };
 
 std::ostream &operator<<(std::ostream &os, Victim const &src);
