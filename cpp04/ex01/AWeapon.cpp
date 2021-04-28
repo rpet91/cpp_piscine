@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/27 11:59:14 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/27 13:55:53 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/28 14:11:09 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ AWeapon::AWeapon(AWeapon const &original)
 
 AWeapon &AWeapon::operator=(AWeapon const &original)
 {
-	this->_name = original._name;
-	this->_apcost = original._apcost;
-	this->_damage = original._damage;
+	this->_name = original.getName();
+	this->_apcost = original.getAPCost();
+	this->_damage = original.getDamage();
 	return (*this);
 }
 
