@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/26 13:32:52 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/27 09:38:54 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/28 15:24:24 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ class Sorcerer {
 		Sorcerer(std::string name, std::string title);
 		Sorcerer(Sorcerer const &original);
 		Sorcerer &operator=(Sorcerer const &original);
-		~Sorcerer(void);
+		~Sorcerer();
 
-		std::string		getName(void) const;
-		std::string		getTitle(void) const;
+		std::string		getName() const;
+		std::string		getTitle() const;
 		void			polymorph(Victim const &src) const;
 
 	private:
-		Sorcerer(void);
+		Sorcerer();
 		
 		std::string		_name;
 		std::string		_title;

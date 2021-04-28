@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/27 11:30:14 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/27 11:43:44 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/28 15:23:56 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Victim.hpp"
 #include <iostream>
 
-Slave::Slave(void)
+Slave::Slave()
 {
 }
 
@@ -23,23 +23,22 @@ Slave::Slave(std::string name) : Victim(name)
 	std::cout << "Okay okay, I will work." << std::endl;
 }
 
-Slave::Slave(Slave const &original)
+Slave::Slave(Slave const &original) : Victim(original)
 {
-	*this = original;
 }
 
 Slave	&Slave::operator=(Slave const &original)
 {
-	this->_name = original._name;
+	this->_name = original.getName();
 	return (*this);
 }
 
-Slave::~Slave(void)
+Slave::~Slave()
 {
 	std::cout << "It's time to go." << std::endl;
 }
 
-void	Slave::getPolymorphed(void) const
+void	Slave::getPolymorphed() const
 {
 	std::cout << this->_name << " the Slave just turned into a chicken." << std::endl;
 }

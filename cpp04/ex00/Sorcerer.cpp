@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/26 13:32:30 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/27 11:16:49 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/28 15:24:11 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Victim.hpp"
 #include <iostream>
 
-Sorcerer::Sorcerer(void)
+Sorcerer::Sorcerer()
 {
 }
 
@@ -35,18 +35,18 @@ Sorcerer	&Sorcerer::operator=(Sorcerer const &original)
 	return (*this);
 }
 
-Sorcerer::~Sorcerer(void)
+Sorcerer::~Sorcerer()
 {
 	std::cout << this->_name << ", " << this->_title <<
 		", is dead. Consequences will never be the same!" << std::endl;
 }
 
-std::string		Sorcerer::getName(void) const
+std::string		Sorcerer::getName() const
 {
 	return (this->_name);
 }
 
-std::string		Sorcerer::getTitle(void) const
+std::string		Sorcerer::getTitle() const
 {
 	return (this->_title);
 }

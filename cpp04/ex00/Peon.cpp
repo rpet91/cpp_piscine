@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/26 13:32:45 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/27 11:09:44 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/28 15:22:03 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Victim.hpp"
 #include <iostream>
 
-Peon::Peon(void)
+Peon::Peon()
 {
 }
 
@@ -23,23 +23,22 @@ Peon::Peon(std::string name) : Victim(name)
 	std::cout << "Zog zog." << std::endl;
 }
 
-Peon::Peon(Peon const &original)
+Peon::Peon(Peon const &original) : Victim(original)
 {
-	*this = original;
 }
 
 Peon	&Peon::operator=(Peon const &original)
 {
-	this->_name = original._name;
+	this->_name = original.getName();
 	return (*this);
 }
 
-Peon::~Peon(void)
+Peon::~Peon()
 {
 	std::cout << "Bleuark..." << std::endl;
 }
 
-void	Peon::getPolymorphed(void) const
+void	Peon::getPolymorphed() const
 {
 	std::cout << this->_name << " has been turned into a pink pony!" << std::endl;
 }

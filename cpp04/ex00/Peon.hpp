@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/26 13:33:08 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/27 11:14:55 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/28 15:18:20 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ class Peon : public Victim {
 		Peon(std::string name);
 		Peon(Peon const &original);
 		Peon &operator=(Peon const &original);
-		~Peon(void);
+		~Peon();
 
-		virtual void	getPolymorphed(void) const;
+		virtual void	getPolymorphed() const;
 
 	private:
-		Peon(void);
+		Peon();
 
 };
 

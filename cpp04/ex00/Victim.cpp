@@ -6,14 +6,14 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/26 13:32:38 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/27 11:17:06 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/28 15:19:29 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Victim.hpp"
 #include <iostream>
 
-Victim::Victim(void)
+Victim::Victim()
 {
 }
 
@@ -33,12 +33,12 @@ Victim	&Victim::operator=(Victim const &original)
 	return (*this);
 }
 
-Victim::~Victim(void)
+Victim::~Victim()
 {
 	std::cout << "Victim " << this->_name << " just died for no apparent reason!" << std::endl;
 }
 
-std::string		Victim::getName(void) const
+std::string		Victim::getName() const
 {
 	return (this->_name);
 }
@@ -49,7 +49,7 @@ std::ostream	&operator<<(std::ostream &os, Victim const &src)
 	return (os);
 }
 
-void	Victim::getPolymorphed(void) const
+void	Victim::getPolymorphed() const
 {
 	std::cout << this->_name << " has been turned into a cute little sheep!" << std::endl;
 }
