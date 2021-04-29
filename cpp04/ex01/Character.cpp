@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/27 12:00:54 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/28 15:15:05 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/29 13:18:35 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Character::Character()
 {
 }
 
-Character::Character(std::string const &name) : _name(name), _ap(40)
+Character::Character(std::string const &name) : _name(name), _ap(40), _weapon(0)
 {
 }
 
@@ -43,9 +43,16 @@ Character::~Character()
 
 void		Character::recoverAP()
 {
+	if (this->_ap == 40)
+	{
+		std::cout << this->_name << " can't regenerate more ap! 40 is max." << std::endl;
+		return ;
+	}
 	this->_ap += 10;
 	if (this->_ap > 40)
 		this->_ap = 40;
+	std::cout << this->_name << " recovered 10 ap and now has "
+		<< this->_ap << " ap." << std::endl;
 }
 
 void		Character::equip(AWeapon *weapon)
@@ -55,7 +62,24 @@ void		Character::equip(AWeapon *weapon)
 
 void		Character::attack(Enemy *target)
 {
-
+	if (!this->_weapon)
+	{
+		std::cout << this->_name <<
+			" tries to attack without a weapon. That doesn't work!" << std::endl;
+		return ;
+	}
+	if (this->_ap - this->_weapon->getAPCost() < 0)
+	{
+		std::cout << "Not enough AP! You'll need to recover first!" << std::endl;
+		return ;
+	}
+	this->_ap -= this->_weapon->getAPCost();
+	std::cout << this->_name << " attacks " << target->getType() <<
+		" with a " << this->_weapon->getName() << std::endl;
+	this->_weapon->attack();
+	target->takeDamage(this->_weapon->getDamage());
+	if (target->getHP() <= 0)
+		delete target;
 }
 
 std::string	Character::getName() const
@@ -68,16 +92,17 @@ int			Character::getAP() const
 	return (this->_ap);
 }
 
-AWeapon		*Character::getAWeapon() const
+AWeapon		*Character::getWeapon() const
 {
 	return (this->_weapon);
 }
 
 std::ostream	&operator<<(std::ostream &os, Character const &src)
 {
-	if (src.getAWeapon())
-		os << src.getName() << " has " << src.getAP() << " AP and wields a "
-			<< src.getAWeapon() << std::endl;
+	os << src.getName() << " has " << src.getAP() << " AP and ";
+	if (src.getWeapon())
+		os << "wields a " << src.getWeapon()->getName() << std::endl;
 	else
-		os << src.getName() << " has " << src.getAP() << " AP and is unarmed" << std::endl;
+		os << "is unarmed" << std::endl;
+	return (os);
 }

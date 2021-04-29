@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/27 12:00:49 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/28 15:09:41 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/29 09:28:01 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Character {
 		Character(std::string const &name);
 		Character(Character const &original);
 		Character	&operator=(Character const &original);
-		~Character();
+		virtual ~Character();
 
 		void				recoverAP();
 		void				equip(AWeapon *weapon);
@@ -30,7 +30,7 @@ class Character {
 
 		std::string virtual	getName() const;
 		int					getAP() const;
-		AWeapon				*getAWeapon() const;
+		AWeapon				*getWeapon() const;
 
 	private:
 		Character();

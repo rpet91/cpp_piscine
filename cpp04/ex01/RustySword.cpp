@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   AWeapon.cpp                                        :+:    :+:            */
+/*   RustySword.cpp                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/04/27 11:59:14 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/29 09:25:29 by rpet          ########   odam.nl         */
+/*   Created: 2021/04/29 11:03:06 by rpet          #+#    #+#                 */
+/*   Updated: 2021/04/29 11:09:09 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "RustySword.hpp"
 #include "AWeapon.hpp"
-#include <string>
+#include <iostream>
 
-AWeapon::AWeapon()
+RustySword::RustySword() : AWeapon("Rusty sword", 8, -12)
 {
 }
 
-AWeapon::AWeapon(std::string const &name, int apcost, int damage) :
-	_name(name), _apcost(apcost), _damage(damage)
+RustySword::RustySword(RustySword const &original) : AWeapon(original)
 {
 }
 
-AWeapon::AWeapon(AWeapon const &original)
-{
-	*this = original;
-}
-
-AWeapon &AWeapon::operator=(AWeapon const &original)
+RustySword	&RustySword::operator=(RustySword const &original)
 {
 	this->_name = original.getName();
 	this->_apcost = original.getAPCost();
@@ -35,21 +30,11 @@ AWeapon &AWeapon::operator=(AWeapon const &original)
 	return (*this);
 }
 
-AWeapon::~AWeapon()
+RustySword::~RustySword()
 {
 }
 
-std::string const	AWeapon::getName() const
+void	RustySword::attack() const
 {
-	return (this->_name);
-}
-
-int					AWeapon::getAPCost() const
-{
-	return (this->_apcost);
-}
-
-int					AWeapon::getDamage() const
-{
-	return (this->_damage);
+	std::cout << "* Choppa choppa *" << std::endl;
 }
