@@ -6,16 +6,17 @@
 #    By: rpet <marvin@codam.nl>                       +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/30 13:04:14 by rpet          #+#    #+#                  #
-#    Updated: 2021/04/29 13:27:01 by rpet          ########   odam.nl          #
+#    Updated: 2021/04/30 14:10:26 by rpet          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
-SRCS = main.cpp Squad.cpp TacticalMarine.cpp AssaultTerminator.cpp
+SRCS = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 OBJS = $(SRCS:.cpp=.o)
 FLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
 CC = clang++
-INC = Squad.hpp TacticalMarine.hpp AssaultTerminator.hpp ISpaceMarine.hpp ISquad.hpp
+INC = AMateria.hpp Ice.hpp Cure.hpp Character.hpp MateriaSource.hpp \
+	  ICharacter.hpp IMateriaSource.hpp
 
 .PHONY: all clean fclean re
 
