@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/29 13:23:47 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/29 14:19:35 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/30 13:27:30 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ TacticalMarine::TacticalMarine()
 
 TacticalMarine::TacticalMarine(TacticalMarine const &original)
 {
+	std::cout << "*copy* Tactical Marine ready for battle!" << std::endl;
 	*this = original;
 }
 

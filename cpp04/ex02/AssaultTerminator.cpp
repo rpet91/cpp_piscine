@@ -1,56 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   TacticalMarine.cpp                                 :+:    :+:            */
+/*   AssaultTerminator.cpp                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/29 13:23:47 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/29 14:19:35 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/30 13:27:47 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "TacticalMarine.hpp"
+#include "AssaultTerminator.hpp"
 #include "ISpaceMarine.hpp"
 #include <iostream>
 
-TacticalMarine::TacticalMarine()
+AssaultTerminator::AssaultTerminator()
 {
-	std::cout << "Tactical Marine ready for battle!" << std::endl;
+	std::cout << "* teleports from space *" << std::endl;
 }
 
-TacticalMarine::TacticalMarine(TacticalMarine const &original)
+AssaultTerminator::AssaultTerminator(AssaultTerminator const &original)
 {
+	std::cout << "* teleports from a copy of space *" << std::endl;
 	*this = original;
 }
 
-TacticalMarine	&TacticalMarine::operator=(TacticalMarine const &original)
+AssaultTerminator	&AssaultTerminator::operator=(AssaultTerminator const &original)
 {
 	(void) original;
 	return (*this);
 }
 
-TacticalMarine::~TacticalMarine()
+AssaultTerminator::~AssaultTerminator()
 {
-	std::cout << "Aaargh..." << std::endl;
+	std::cout << "I'll be back..." << std::endl;
 }
 
-ISpaceMarine	*TacticalMarine::clone() const
+ISpaceMarine	*AssaultTerminator::clone() const
 {
-	return (new TacticalMarine(*this));
+	return (new AssaultTerminator(*this));
 }
 
-void			TacticalMarine::battleCry() const
+void			AssaultTerminator::battleCry() const
 {
-	std::cout << "For the holy PLOT!" << std::endl;
+	std::cout << "This code is unclean. PURIFY IT!" << std::endl;
 }
 
-void			TacticalMarine::rangedAttack() const
+void			AssaultTerminator::rangedAttack() const
 {
-	std::cout << "* attacks with a bolter *" << std::endl;
+	std::cout << "* does nothing *" << std::endl;
 }
 
-void			TacticalMarine::meleeAttack() const
+void			AssaultTerminator::meleeAttack() const
 {
-	std::cout << "* attacks with a chainsword *" << std::endl;
+	std::cout << "* attacks with chainfists *" << std::endl;
 }

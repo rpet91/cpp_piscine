@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   TacticalMarine.hpp                                 :+:    :+:            */
+/*   AssaultTerminator.hpp                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/29 13:23:43 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/29 14:47:19 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/30 08:29:04 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TACTICALMARINE_HPP
-# define TACTICALMARINE_HPP
+#ifndef ASSAULTTERMINATOR_HPP
+# define ASSAULTTERMINATOR_HPP
 # include "ISpaceMarine.hpp"
 
-class TacticalMarine : public ISpaceMarine {
+class AssaultTerminator : public ISpaceMarine {
 
 	public:
-		TacticalMarine();
-		TacticalMarine(TacticalMarine const &original);
-		TacticalMarine	&operator=(TacticalMarine const &original);
-		virtual ~TacticalMarine();
+		AssaultTerminator();
+		AssaultTerminator(AssaultTerminator const &original);
+		AssaultTerminator	&operator=(AssaultTerminator const &original);
+		virtual ~AssaultTerminator();
 
 		ISpaceMarine	*clone() const;
 		void			battleCry() const;
