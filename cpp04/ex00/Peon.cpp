@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/26 13:32:45 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/28 15:22:03 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/30 13:31:02 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Peon::Peon(std::string name) : Victim(name)
 
 Peon::Peon(Peon const &original) : Victim(original)
 {
+	std::cout << "Copy zog zog." << std::endl;
 }
 
 Peon	&Peon::operator=(Peon const &original)

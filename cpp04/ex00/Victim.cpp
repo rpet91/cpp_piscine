@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/26 13:32:38 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/28 15:19:29 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/30 13:32:57 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ Victim::Victim(std::string name) : _name(name)
 Victim::Victim(Victim const &original)
 {
 	*this = original;
+	std::cout << "Some random copy victim called " << this->_name
+		<< " just appeared!" << std::endl;
 }
 
 Victim	&Victim::operator=(Victim const &original)

@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/27 11:30:14 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/28 15:23:56 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/30 13:31:11 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Slave::Slave(std::string name) : Victim(name)
 
 Slave::Slave(Slave const &original) : Victim(original)
 {
+	std::cout << "Okay okay, I will copy." << std::endl;
 }
 
 Slave	&Slave::operator=(Slave const &original)
