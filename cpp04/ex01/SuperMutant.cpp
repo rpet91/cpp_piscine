@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/27 12:00:15 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/28 14:27:50 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/30 13:30:33 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ SuperMutant::SuperMutant() : Enemy(170, "Super Mutant")
 
 SuperMutant::SuperMutant(SuperMutant const &original) : Enemy(original)
 {
+	std::cout << "Copy Gaaah. Me want smash heads!" << std::endl;
 }
 
 SuperMutant	&SuperMutant::operator=(SuperMutant const &original)

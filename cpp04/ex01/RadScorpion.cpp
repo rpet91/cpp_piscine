@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/27 12:00:43 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/28 14:48:31 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/30 13:30:19 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ RadScorpion::RadScorpion() : Enemy(80, "RadScorpion")
 
 RadScorpion::RadScorpion(RadScorpion const &original) : Enemy(original)
 {
+	std::cout << "*Copy click click click *" << std::endl;
 }
 
 RadScorpion	&RadScorpion::operator=(RadScorpion const &original)

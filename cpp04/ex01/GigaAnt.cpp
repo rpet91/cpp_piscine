@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/29 11:45:42 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/29 13:19:01 by rpet          ########   odam.nl         */
+/*   Updated: 2021/04/30 13:29:58 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ GigaAnt::GigaAnt() : Enemy(620, "Giga Ant")
 
 GigaAnt::GigaAnt(GigaAnt const &original) : Enemy(original)
 {
+	std::cout << "* Copy prrt prrt prrt *" << std::endl;
 }
 
 GigaAnt	&GigaAnt::operator=(GigaAnt const &original)
