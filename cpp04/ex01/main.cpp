@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/27 12:01:00 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/29 13:18:12 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/03 07:15:03 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,9 +117,9 @@ void	test_NoWeapon()
 
 int	main()
 {
-	//test_NoWeapon();
-	//test_NegativeDmg();
-	//test_Killing();
+	test_NoWeapon();
+	test_NegativeDmg();
+	test_Killing();
 	test_APuser();
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/29 11:44:39 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/29 11:53:33 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/03 07:14:23 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class GigaAnt : public Enemy {
 		GigaAnt();
 		GigaAnt(GigaAnt const &original);
 		GigaAnt	&operator=(GigaAnt const &original);
-		~GigaAnt();
+		virtual ~GigaAnt();
 
 		virtual void	takeDamage(int dmg);
 };
