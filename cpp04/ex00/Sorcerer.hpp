@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/26 13:32:52 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/28 15:24:24 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/03 07:13:30 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Sorcerer {
 		Sorcerer(std::string name, std::string title);
 		Sorcerer(Sorcerer const &original);
 		Sorcerer &operator=(Sorcerer const &original);
-		~Sorcerer();
+		virtual ~Sorcerer();
 
 		std::string		getName() const;
 		std::string		getTitle() const;
