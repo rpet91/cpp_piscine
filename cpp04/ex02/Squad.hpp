@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/29 13:23:27 by rpet          #+#    #+#                 */
-/*   Updated: 2021/04/30 11:30:11 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/03 07:16:05 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Squad : public ISquad {
 		Squad();
 		Squad(Squad const &original);
 		Squad	&operator=(Squad const &original);
-		~Squad();
+		virtual ~Squad();
 
 		int				getCount() const;
 		ISpaceMarine	*getUnit(int unit) const;
