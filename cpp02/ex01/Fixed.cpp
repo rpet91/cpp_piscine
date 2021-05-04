@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/30 13:02:36 by rpet          #+#    #+#                 */
-/*   Updated: 2021/02/16 16:18:51 by rpet             ###   ########.fr       */
+/*   Updated: 2021/05/04 09:19:50 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ std::ostream &operator<<(std::ostream& os, const Fixed& data)
 
 int		Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_fixedValue);
 }
 
