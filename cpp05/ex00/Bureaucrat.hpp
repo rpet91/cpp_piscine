@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/04 09:40:32 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/04 11:56:05 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/04 14:28:15 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,14 @@ class Bureaucrat {
 		void				incrementGrade();
 		void				decrementGrade();
 
-		class GradeTooHighException {
-
+		class GradeTooHighException : public std::exception {
+			public:
+				virtual const char	*what() const throw();
 		};
 
-		class GradeTooLowException {
-
+		class GradeTooLowException : public std::exception {
+			public:
+				virtual const char	*what() const throw();
 		};
 
 	private:

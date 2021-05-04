@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/04 09:42:18 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/04 13:08:18 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/04 14:46:35 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,22 +53,28 @@ int					Bureaucrat::getGrade() const
 
 void				Bureaucrat::incrementGrade()
 {
-	this->_grade--;
+	if (this->_grade > 1)
+		this->_grade--;
+	else
+		throw GradeTooHighException();
 }
 
 void				Bureaucrat::decrementGrade()
 {
-	this->_grade++;
+	if (this->_grade < 150)
+		this->_grade++;
+	else
+		throw GradeTooLowException();
 }
 
-Bureaucrat::GradeTooHighException()
+const char	*Bureaucrat::GradeTooHighException::what() const throw()
 {
-	std::cout << "test high" << std::endl;
+	return ("Grade is too high!");
 }
 
-Bureaucrat::GradeTooLowException()
+const char	*Bureaucrat::GradeTooLowException::what() const throw()
 {
-	std::cout << "test low" << std::endl;
+	return ("Grade is too low!");
 }
 
 std::ostream	&operator<<(std::ostream &out, const Bureaucrat &src)
