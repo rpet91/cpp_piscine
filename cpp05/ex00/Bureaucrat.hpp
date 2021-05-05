@@ -6,13 +6,14 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/04 09:40:32 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/04 14:28:15 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/05 07:15:03 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 # include <string>
+# include <exception>
 
 class Bureaucrat {
 
