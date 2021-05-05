@@ -6,13 +6,13 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/30 14:12:16 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/03 08:06:38 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/04 08:32:31 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
-#include <iostream>
+#include <string>
 
 AMateria::AMateria()
 {

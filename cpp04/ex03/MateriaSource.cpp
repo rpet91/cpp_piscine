@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/30 14:13:52 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/03 12:03:07 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/04 08:38:16 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ MateriaSource	&MateriaSource::operator=(MateriaSource const &original)
 
 MateriaSource::~MateriaSource()
 {
+	for (int i = 0; i < 4; i++)
+		delete this->_materias[i];
 }
 
 void		MateriaSource::learnMateria(AMateria *materia)

@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/30 14:13:35 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/03 13:41:54 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/05 09:08:19 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void				Character::equip(AMateria *m)
 {
 	if (_amount >= 4 || !m)
 		return ;
-	this->_inv[this->_amount] = m->clone();
+	this->_inv[this->_amount] = m;
 	this->_amount++;
 }
 

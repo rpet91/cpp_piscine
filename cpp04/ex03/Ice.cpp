@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/30 14:12:37 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/03 10:37:27 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/04 08:29:49 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,5 @@ AMateria	*Ice::clone() const
 void		Ice::use(ICharacter &target)
 {
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	AMateria::use(target);
 }
