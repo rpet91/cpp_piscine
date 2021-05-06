@@ -6,15 +6,16 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/04 09:24:39 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/05 08:13:28 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/06 13:24:30 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <iostream>
 #include <exception>
 
-int	main()
+void	bureaucrat_test()
 {
 	std::cout << "Creating a new Bureaucrat \"Mark\":" << std::endl;
 	try
@@ -23,7 +24,7 @@ int	main()
 	}
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
-		std::cout << "My error: " <<  e.what() << std::endl;
+		std::cout << "My error: " << e.what() << std::endl;
 	}
 	catch (std::exception &e)
 	{
@@ -62,6 +63,51 @@ int	main()
 		std::cout << "General error: " << e.what() << std::endl;
 	}
 	std::cout << remco;
-	std::cout << "No error occurred, big yay." << std::endl;
+}
+
+void	form_test()
+{
+	Form		form1("paper", 69, 150);
+	Bureaucrat	remco("Remco", 69);
+
+	std::cout << remco << form1;
+	try
+	{
+		remco.signForm(form1);
+	}
+	catch (Form::GradeTooLowException &e)
+	{
+		std::cout << "My error: " << e.what() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std:: cout << "General error: " << e.what() << std::endl;
+	}
+	std::cout << form1;
+
+	std::cout << std::endl;
+
+	Form		form2("ticket", 20, 150);
+	Bureaucrat	ingmar("Ingmar", 21);
+
+	std::cout << ingmar << form2;
+	try
+	{
+		ingmar.signForm(form2);
+	}
+	catch (Form::GradeTooLowException &e)
+	{
+		std::cout << "My error: " << e.what() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std:: cout << "General error: " << e.what() << std::endl;
+	}
+}
+
+int		main()
+{
+	//bureaucrat_test();
+	form_test();
 	return (0);
 }
