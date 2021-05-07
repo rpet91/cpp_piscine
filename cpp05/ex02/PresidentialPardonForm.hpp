@@ -6,16 +6,16 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/06 13:33:23 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/06 14:45:41 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/07 10:52:28 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
 # define PRESIDENTIALPARDONFORM_HPP
-# include "Form.hpp"
+# include "AForm.hpp"
 # include <string>
 
-class PresidentialPardonForm : public Form {
+class PresidentialPardonForm : public AForm {
 
 	public:
 		PresidentialPardonForm(std::string const &target);
@@ -26,6 +26,8 @@ class PresidentialPardonForm : public Form {
 	private:
 		PresidentialPardonForm();
 
+		void				_performAction() const;
+		
 		std::string const	_target;
 
 };

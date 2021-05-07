@@ -6,113 +6,108 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/04 09:24:39 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/06 14:49:24 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/07 11:35:17 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include <iostream>
 #include <exception>
 
-void	bureaucrat_test()
+void	execute_scf()
 {
-	std::cout << "Creating a new Bureaucrat \"Mark\":" << std::endl;
-	try
-	{
-		Bureaucrat	mark("Mark", 0);
-	}
-	catch (Bureaucrat::GradeTooLowException &e)
-	{
-		std::cout << "My error: " << e.what() << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "General error: " << e.what() << std::endl;
-	}
-	std::cout << std::endl;
+	Bureaucrat				gg("Good Grade", 136);
+	Bureaucrat				mg("Mid Grade", 138);
+	Bureaucrat				bg("Bad Grade", 148);
+	ShrubberyCreationForm	scf1("Nikander");
+	ShrubberyCreationForm	scf2("Lisa");
+	ShrubberyCreationForm	scf3("Hester");
 
-	Bureaucrat	remco("Remco", 150);
-	std::cout << remco;	
-	std::cout << "Let's decrement Remco's grade by 1." << std::endl;
-	try
-	{
-		remco.decrementGrade();
-	}
-	catch (Bureaucrat::GradeTooLowException &e)
-	{
-		std::cout << "My error: " << e.what() << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "General error: " << e.what() << std::endl;
-	}
+	// Testing with a grade LOWER than sign and LOWER than exec
+	gg.executeForm(scf1);
+	gg.signForm(scf1);
+	gg.executeForm(scf1);
 
 	std::cout << std::endl;
-	std::cout << "Let's increment Remco's grade by 1." << std::endl;
-	try
-	{
-		remco.incrementGrade();
-	}
-	catch (Bureaucrat::GradeTooLowException &e)
-	{
-		std::cout << "My error: " << e.what() << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "General error: " << e.what() << std::endl;
-	}
-	std::cout << remco;
+
+	// Testing with a grade LOWER than sign and HIGHER than exec
+	mg.executeForm(scf2);
+	mg.signForm(scf2);
+	mg.executeForm(scf2);
+	
+	std::cout << std::endl;
+
+	// Testing with a grade HIGHER than sign and HIGHER than exec
+	bg.executeForm(scf3);
+	bg.signForm(scf3);
+	bg.executeForm(scf3);
 }
 
-void	form_test()
+void	execute_rrf()
 {
-	Form		form1("paper", 69, 150);
-	Bureaucrat	remco("Remco", 69);
+	Bureaucrat				gg("Good Grade", 44);
+	Bureaucrat				mg("Mid Grade", 69);
+	Bureaucrat				bg("Bad Grade", 73);
+	RobotomyRequestForm		rrf1("Abel");
+	RobotomyRequestForm		rrf2("Ingmar");
+	RobotomyRequestForm		rrf3("Laura");
 
-	std::cout << remco << form1;
-	try
-	{
-		remco.signForm(form1);
-	}
-	catch (Form::GradeTooLowException &e)
-	{
-		std::cout << "My error: " << e.what() << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std:: cout << "General error: " << e.what() << std::endl;
-	}
-	std::cout << form1;
+	// Testing with a grade LOWER than sign and LOWER than exec
+	gg.executeForm(rrf1);
+	gg.signForm(rrf1);
+	gg.executeForm(rrf1);
 
 	std::cout << std::endl;
 
-	Form		form2("ticket", 20, 150);
-	Bureaucrat	ingmar("Ingmar", 21);
+	// Testing with a grade LOWER than sign and HIGHER than exec
+	mg.executeForm(rrf2);
+	mg.signForm(rrf2);
+	mg.executeForm(rrf2);
+	
+	std::cout << std::endl;
 
-	std::cout << ingmar << form2;
-	try
-	{
-		ingmar.signForm(form2);
-	}
-	catch (Form::GradeTooLowException &e)
-	{
-		std::cout << "My error: " << e.what() << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std:: cout << "General error: " << e.what() << std::endl;
-	}
+	// Testing with a grade HIGHER than sign and HIGHER than exec
+	bg.executeForm(rrf3);
+	bg.signForm(rrf3);
+	bg.executeForm(rrf3);
 }
 
-void	execute_test()
+void	execute_ppf()
 {
+	Bureaucrat				gg("Good Grade", 4);
+	Bureaucrat				mg("Mid Grade", 20);
+	Bureaucrat				bg("Bad Grade", 26);
+	PresidentialPardonForm	ppf1("Mark");
+	PresidentialPardonForm	ppf2("Rixt");
+	PresidentialPardonForm	ppf3("Lars");
+
+	// Testing with a grade LOWER than sign and LOWER than exec
+	gg.executeForm(ppf1);
+	gg.signForm(ppf1);
+	gg.executeForm(ppf1);
+
+	std::cout << std::endl;
+
+	// Testing with a grade LOWER than sign and HIGHER than exec
+	mg.executeForm(ppf2);
+	mg.signForm(ppf2);
+	mg.executeForm(ppf2);
+	
+	std::cout << std::endl;
+
+	// Testing with a grade HIGHER than sign and HIGHER than exec
+	bg.executeForm(ppf3);
+	bg.signForm(ppf3);
+	bg.executeForm(ppf3);
 }
 
 int		main()
 {
-	//bureaucrat_test();
-	//form_test();
-	execute_test();
+	execute_scf(); // ShrubberyCreationForm
+	//execute_rrf(); // RobotomyRequestForm
+	//execute_ppf(); // PresidentialPardonForm
 	return (0);
 }

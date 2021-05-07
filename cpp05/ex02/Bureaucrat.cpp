@@ -6,11 +6,12 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/04 09:42:18 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/06 13:23:29 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/07 10:53:55 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 #include <iostream>
 
 Bureaucrat::Bureaucrat()
@@ -67,7 +68,7 @@ void				Bureaucrat::decrementGrade()
 		throw GradeTooLowException();
 }
 
-void				Bureaucrat::signForm(Form &form) const
+void				Bureaucrat::signForm(AForm &form) const
 {
 	try
 	{
@@ -80,6 +81,20 @@ void				Bureaucrat::signForm(Form &form) const
 			form.getName() << "\", because " << e.what() << std::endl;
 	}
 
+}
+
+void				Bureaucrat::executeForm(AForm const &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_name << " executes " << form.getName() << "." << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Bureaucrat " << this->_name << " can't execute the form \"" <<
+			form.getName() << "\", because " << e.what() << std::endl;
+	}
 }
 
 const char			*Bureaucrat::GradeTooHighException::what() const throw()

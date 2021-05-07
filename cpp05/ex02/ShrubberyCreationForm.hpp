@@ -6,16 +6,16 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/06 13:30:36 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/06 14:29:43 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/07 11:07:52 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
-# include "Form.hpp"
+# include "AForm.hpp"
 # include <string>
 
-class ShrubberyCreationForm : public Form {
+class ShrubberyCreationForm : public AForm {
 
 	public:
 		ShrubberyCreationForm(std::string const &target);
@@ -25,6 +25,8 @@ class ShrubberyCreationForm : public Form {
 
 	private:
 		ShrubberyCreationForm();
+
+		void				_performAction() const;
 
 		std::string const	_target;
 
