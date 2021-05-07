@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/04 09:24:39 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/06 13:24:30 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/07 10:54:51 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,56 +14,6 @@
 #include "Form.hpp"
 #include <iostream>
 #include <exception>
-
-void	bureaucrat_test()
-{
-	std::cout << "Creating a new Bureaucrat \"Mark\":" << std::endl;
-	try
-	{
-		Bureaucrat	mark("Mark", 0);
-	}
-	catch (Bureaucrat::GradeTooLowException &e)
-	{
-		std::cout << "My error: " << e.what() << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "General error: " << e.what() << std::endl;
-	}
-	std::cout << std::endl;
-
-	Bureaucrat	remco("Remco", 150);
-	std::cout << remco;	
-	std::cout << "Let's decrement Remco's grade by 1." << std::endl;
-	try
-	{
-		remco.decrementGrade();
-	}
-	catch (Bureaucrat::GradeTooLowException &e)
-	{
-		std::cout << "My error: " << e.what() << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "General error: " << e.what() << std::endl;
-	}
-
-	std::cout << std::endl;
-	std::cout << "Let's increment Remco's grade by 1." << std::endl;
-	try
-	{
-		remco.incrementGrade();
-	}
-	catch (Bureaucrat::GradeTooLowException &e)
-	{
-		std::cout << "My error: " << e.what() << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "General error: " << e.what() << std::endl;
-	}
-	std::cout << remco;
-}
 
 void	form_test()
 {
@@ -81,7 +31,7 @@ void	form_test()
 	}
 	catch (std::exception &e)
 	{
-		std:: cout << "General error: " << e.what() << std::endl;
+		std::cout << "General error: " << e.what() << std::endl;
 	}
 	std::cout << form1;
 
@@ -101,13 +51,19 @@ void	form_test()
 	}
 	catch (std::exception &e)
 	{
-		std:: cout << "General error: " << e.what() << std::endl;
+		std::cout << "General error: " << e.what() << std::endl;
 	}
+
+	Form		form3("contract", 50, 150);
+	Bureaucrat	jonas("Jonas", 25);
+
+	std::cout << std::endl;
+	jonas.signForm(form3);
+	jonas.signForm(form3);
 }
 
 int		main()
 {
-	//bureaucrat_test();
 	form_test();
 	return (0);
 }

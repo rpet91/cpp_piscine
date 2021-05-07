@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/05 09:25:00 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/06 13:18:25 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/07 09:38:34 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ int					Form::getExecGrade() const
 
 void				Form::beSigned(Bureaucrat const &src)
 {
+	if (this->_signed == true)
+		throw AlreadySignedException();
 	if (this->_signGrade >= src.getGrade())
 		this->_signed = true;
 	else
@@ -82,6 +84,11 @@ const char			*Form::GradeTooHighException::what() const throw()
 const char			*Form::GradeTooLowException::what() const throw()
 {
 	return ("the grade is too low!");
+}
+
+const char			*Form::AlreadySignedException::what() const throw()
+{
+	return ("the form has already been signed!");
 }
 
 std::ostream		&operator<<(std::ostream &os, Form const &src)

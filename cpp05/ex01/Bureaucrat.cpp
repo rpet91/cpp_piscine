@@ -6,11 +6,12 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/04 09:42:18 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/06 13:23:29 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/07 10:54:26 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <iostream>
 
 Bureaucrat::Bureaucrat()

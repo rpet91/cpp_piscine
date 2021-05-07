@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/05 09:25:06 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/06 12:12:38 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/07 09:38:57 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ class Form {
 		};
 		
 		class GradeTooLowException : public std::exception {
+			public:
+				virtual const char	*what() const throw();
+		};
+
+		class AlreadySignedException : public std::exception {
 			public:
 				virtual const char	*what() const throw();
 		};
