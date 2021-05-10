@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/04 09:42:18 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/07 13:48:58 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/10 13:37:59 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,13 @@ Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name), _grade
 		throw GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src)
+Bureaucrat::Bureaucrat(Bureaucrat const &src) : _name(getName())
 {
 	*this = src;
 }
 
 Bureaucrat			&Bureaucrat::operator=(Bureaucrat const &src)
 {
-	this->_name = src._name;
 	this->_grade = src._grade;
 	return (*this);
 }
