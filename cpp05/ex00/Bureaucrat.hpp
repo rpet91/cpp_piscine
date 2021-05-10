@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/04 09:40:32 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/05 07:15:03 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/10 13:34:45 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ class Bureaucrat {
 	private:
 		Bureaucrat();
 		
-		std::string		_name;
-		int				_grade;
+		std::string const	_name;
+		int					_grade;
 
 };
 
