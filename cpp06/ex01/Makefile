@@ -6,16 +6,16 @@
 #    By: rpet <marvin@codam.nl>                       +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/30 13:04:14 by rpet          #+#    #+#                  #
-#    Updated: 2021/05/12 12:39:47 by rpet          ########   odam.nl          #
+#    Updated: 2021/05/12 14:24:14 by rpet          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = convert
+NAME = Serialize
 SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 FLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
 CC = clang++
-INC =
+INC = serialization.hpp
 
 .PHONY: all clean fclean re
 
