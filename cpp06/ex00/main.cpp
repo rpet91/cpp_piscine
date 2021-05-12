@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/10 09:37:43 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/11 14:48:12 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/12 10:51:14 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,13 @@ int				main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		std::cout << "Error: Program needs exact one argument." << std::endl;
+		std::cerr << "Error: Program needs exact one argument." << std::endl;
 		return (0);
 	}
 	std::string arg = static_cast<std::string>(argv[1]);
 	e_type	type = detectType(arg);
 	if (type == INVALID)
-		std::cout << "Error: Argument is not a char, int, float or double." << std::endl;
+		std::cerr << "Error: Argument is not a char, int, float or double." << std::endl;
 	else
 		convertFunctions[type](arg);
 	return (0);

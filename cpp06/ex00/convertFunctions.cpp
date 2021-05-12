@@ -6,54 +6,75 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/11 14:42:41 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/11 14:49:41 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/12 12:00:59 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "convert.hpp"
 #include <sstream>
 #include <iostream>
+#include <iomanip>
 
 void		convertChar(std::string arg)
 {
-	std::cout << "Char: " << arg << std::endl;
 	std::stringstream	ss;
-	char	c;
+	char				c;
+
 	ss << arg;
 	ss >> c;
+	printCharConversion(c);
 }
 
 void		convertInt(std::string arg)
 {
-	std::cout << "Int: " << arg << std::endl;
 	std::stringstream	ss;
-	int		i;
+	double				i;
+
 	ss << arg;
 	ss >> i;
-
+	std::cout << std::setprecision(1) << std::fixed;
+	printConversion(i);
 }
 
 void		convertFloat(std::string arg)
 {
-	std::cout << "Float: " << arg << std::endl;
+	arg.pop_back();
 	std::stringstream	ss;
-	float	f;
+	size_t				precision = arg.length() - arg.find('.', 0) - 1;
+	double				f;
+
 	ss << arg;
 	ss >> f;
-
+	if (precision == 0)
+		precision = 1;
+	std::cout << std::setprecision(precision) << std::fixed;
+	printConversion(f);
 }
 
 void		convertDouble(std::string arg)
 {
-	std::cout << "Double: " << arg << std::endl;
 	std::stringstream	ss;
-	double	d;
+	size_t				precision = arg.length() - arg.find('.', 0) - 1;
+	double				d;
+
 	ss << arg;
 	ss >> d;
-
+	if (precision == 0)
+		precision = 1;
+	std::cout << std::setprecision(precision) << std::fixed;
+	printConversion(d);
 }
 
 void		convertSpecial(std::string arg)
 {
-	std::cout << "Special: " << arg << std::endl;
-	std::cout << arg << std::endl;
+	std::string	floatArg[] = {"inff", "-inff", "+inff", "nanf"};
+	std::string	doubleArg[] = {"inf", "-inf", "+inf", "nan"};
+	for (int i = 0; i < 4; i++)
+	{
+		if (floatArg[i] == arg)
+			arg = doubleArg[i];
+		if (arg == "+inf")
+			arg = "inf";
+	}
+	printSpecialConversion(arg);
 }
