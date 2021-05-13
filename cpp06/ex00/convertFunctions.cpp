@@ -6,7 +6,11 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/11 14:42:41 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/12 12:00:59 by rpet          ########   odam.nl         */
+<<<<<<< HEAD
+/*   Updated: 2021/05/13 10:44:37 by rpet          ########   odam.nl         */
+=======
+/*   Updated: 2021/05/13 10:43:00 by rpet          ########   odam.nl         */
+>>>>>>> f426b92cd1e82dc370c3f2bdc4cdd03621a2ce0f
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +26,7 @@ void		convertChar(std::string arg)
 
 	ss << arg;
 	ss >> c;
+	std::cout << std::setprecision(1) << std::fixed;
 	printCharConversion(c);
 }
 
