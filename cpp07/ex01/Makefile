@@ -6,16 +6,16 @@
 #    By: rpet <marvin@codam.nl>                       +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/30 13:04:14 by rpet          #+#    #+#                  #
-#    Updated: 2021/05/13 09:59:27 by rpet          ########   odam.nl          #
+#    Updated: 2021/05/14 08:47:05 by rpet          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = iter
 SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 FLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
 CC = clang++
-INC = whatever.hpp
+INC = iter.hpp
 
 .PHONY: all clean fclean re
 

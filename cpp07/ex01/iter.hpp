@@ -6,19 +6,19 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/13 11:50:42 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/13 13:49:59 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/14 08:35:37 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ITER_HPP
 # define ITER_HPP
-# include <iostream>
+# include <cstddef>
 
 template <typename T>
-void	iter(T const array, size_t const len, void function)
+void	iter(T const *array, size_t const len, void (*func)(T element))
 {
 	for (size_t i = 0; i < len; i++)
-		function(array[i]);
+		func(array[i]);
 }
 
 #endif
