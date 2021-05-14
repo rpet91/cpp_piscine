@@ -6,11 +6,11 @@
 #    By: rpet <marvin@codam.nl>                       +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/30 13:04:14 by rpet          #+#    #+#                  #
-#    Updated: 2021/05/13 09:59:27 by rpet          ########   odam.nl          #
+#    Updated: 2021/05/14 08:47:47 by rpet          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = whatever
 SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 FLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
