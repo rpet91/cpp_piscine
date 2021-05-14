@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/11 14:46:12 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/12 12:54:49 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/14 13:36:17 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void			printCharConversion(char c)
 
 void			printConversion(double nb)
 {
-	if (nb >= 33 && nb <= 126)
+	if (isprint(nb))
 		std::cout << "char: " << static_cast<char>(nb) << std::endl;
 	else
 		std::cout << "char: Non displayable" << std::endl;

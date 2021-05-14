@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/10 09:37:43 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/12 10:51:14 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/13 10:53:40 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static e_type	detectType(std::string arg)
 
 		if (arg[0] == '-')
 			sign = 1;
-		if (arg[1 + sign] == 'f')
+		if (arg[1 + sign] == 'f' || (arg.length() == 2 && sign == 1))
 			return (INVALID);
 		if (arg[arg.length() - 1] == 'f')
 			return (FLOAT);
@@ -70,6 +70,10 @@ int				main(int argc, char **argv)
 	if (type == INVALID)
 		std::cerr << "Error: Argument is not a char, int, float or double." << std::endl;
 	else
+	{
+		if (arg == "-0")
+			arg = "0";
 		convertFunctions[type](arg);
+	}
 	return (0);
 }
