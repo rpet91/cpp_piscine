@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/14 08:51:57 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/14 13:03:12 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/17 11:45:45 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,20 @@ template <typename T>
 class Array {
 
 	public:
-		Array() : Array(0)
+		Array() : _amountElements(0)
 		{
+			this->_element = new T[this->_amountElements]();
 		}
-		Array(unsigned int const n) : _amountElements(n)
+		Array(unsigned int n) : _amountElements(n)
 		{
 			this->_element = new T[this->_amountElements]();
 		}
 		Array(Array const &src)
 		{
-			*this = src;
+			this->_amountElements = src._amountElements;
+			this->_element = new T[src._amountElements];
+			for (unsigned int i = 0; i < src._amountElements; i++)
+				this->_element[i] = src._element[i];
 		}
 		virtual ~Array()
 		{
@@ -37,10 +41,10 @@ class Array {
 		Array	&operator=(Array const &src)
 		{
 			deleteElement();
-			this->_element = new T[src._amountElements];
-			for (unsigned int i = 0; i < src._amountElements; i++)
-				this->_element[i] = src._element[i];
 			this->_amountElements = src._amountElements;
+			this->_element = new T[src._amountElements];
+			for (unsigned int i = 0; i < this->_amountElements; i++)
+				this->_element[i] = src._element[i];
 			return (*this);
 		} 
 		T		&operator[](unsigned int elementNb) const
@@ -60,8 +64,8 @@ class Array {
 			delete [] this->_element;
 		}
 
-		unsigned int const	_amountElements;
-		T					*_element;
+		unsigned int	_amountElements;
+		T				*_element;
 };
 
 #endif

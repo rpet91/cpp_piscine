@@ -6,7 +6,7 @@
 /*   By: rpet <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/14 08:51:39 by rpet          #+#    #+#                 */
-/*   Updated: 2021/05/14 13:32:35 by rpet          ########   odam.nl         */
+/*   Updated: 2021/05/17 11:47:45 by rpet          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,22 @@
 #include <exception>
 #include <ctime>
 #include <cstdlib>
+
+void	noParameterTest()
+{
+	Array<int>	empty;
+	
+	std::cout << "The array size is: " << empty.size() << std::endl;
+	try
+	{
+		std::cout << "In Array[nb]: " << empty[0] << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Given number is out of limits." << std::endl;
+	}
+	std::cout << std::endl;
+}
 
 void	chrTest()
 {
@@ -88,5 +104,6 @@ int	main()
 	intTest();
 	strTest();
 	chrTest();
+	noParameterTest();
 	return (0);
 }
