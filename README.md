@@ -1,6 +1,7 @@
 # cpp_piscine #11
 
-My eleventh project of the 42 school Codam. This is the first C++ project and you'll start with the basics first. Every CPP module brings a new method where you have to work with.  
+My eleventh project of the 42 school Codam. This is the first C++ project and you'll start with the basics first. Every CPP module brings a new method where you have to work with.
+
 CPP00: CPP syntax mostly, classes, initialization.  
 CPP01: Memory allocation, pointers to members, references, file streams.  
 CPP02: Polymorphism, operator overloads, canonical classes.  
